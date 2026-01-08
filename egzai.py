@@ -1,8 +1,10 @@
 
+pamokos = {}
 with open("egzai_test/duomenys.txt", "r", encoding="utf-8") as f:
-    pamokos = {}
-    for line in f:
-        dalys = line.split()
+    n = int(f.readline())
+
+    for _ in range(n):
+        dalys = f.readline().split()
 
         vardai = dalys[0]
         pamoka = dalys[1]
@@ -11,7 +13,7 @@ with open("egzai_test/duomenys.txt", "r", encoding="utf-8") as f:
 
         vidur = sum(paz) / kiekis
 
-        if vidur < 9:
+        if vidur >= 9:
             if pamoka not in pamokos:
                 pamokos[pamoka] = []
             pamokos[pamoka].append(vardai)
